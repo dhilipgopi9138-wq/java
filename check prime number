@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long N = sc.nextLong();
+        if (N <= 1) {
+            System.out.println("Not Prime");
+        } 
+        else if (N == 2) {
+            System.out.println("Prime");
+        } 
+        else if (N % 2 == 0) {
+            System.out.println("Not Prime");
+        } 
+        else {
+            boolean isPrime = true;
+            for (long i = 3; i * i <= N; i += 2) {
+                if (N % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime)
+                System.out.println("Prime");
+            else
+                System.out.println("Not Prime");
+        }
+
+    }
+}
